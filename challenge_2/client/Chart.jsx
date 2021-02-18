@@ -3,12 +3,17 @@ import {Line} from 'react-chartjs-2';
 
 
 const Chart = (props) => {
+
+  let currency = props.currency;
+  if (currency === 'BitcoinCash') {
+    currency = 'Bitcoin Cash';
+  }
   const data = {
-    labels: props.dates,
+    labels: props.data.times,
     datasets: [
       {
-        label: 'Bitcoin Closing Price',
-        data: props.prices,
+        label: `${currency} Closing Price`,
+        data: props.data.prices,
         backgroundColor: "rgba(75,192,192,0.2)",
       borderColor: "rgba(75,192,192,1)"
     }
