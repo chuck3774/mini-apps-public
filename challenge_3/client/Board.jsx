@@ -356,6 +356,7 @@ const Board = (props) => {
   setScore9(0);
   setBall101(0);
   setBall102(0);
+  setBall103(0);
   setScore10(0);
  }
 
