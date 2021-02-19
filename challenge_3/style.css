@@ -1,0 +1,36 @@
+.framescore {
+  border-style: solid;
+  border-width: 2px;
+  width: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+  border-style: solid;
+  border-width: 2px;
+  text-align: center;
+}
+
+.scoreCard {
+  margin-top: 30px;
+}
+
+.frame {
+  margin-right: 10px;
+}
+
+.totalScore {
+  width: 100px;
+  height: 30px;
+  border-style: solid;
+  border-width: 2px;
+  text-align: center;
+}
+
+.totalTitle {
+  margin-right: 10px;
+}
