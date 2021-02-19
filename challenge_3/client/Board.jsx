@@ -56,7 +56,7 @@ const Board = (props) => {
       setScore1(number);
      }
      if (frame === 2) {
-       if (ball11 === 10) {
+     if (ball11 === 10 || ball11 + ball12 === 10 && ball11 !== 10) {
         setBall21(number);
         setScore2(number);
         setScore1(number + score1);
@@ -72,7 +72,7 @@ const Board = (props) => {
         setScore3(number);
         setScore1(number + score1);
         setScore2(number + score2);
-       } else if (ball21 === 10) {
+       } else if (ball21 === 10 || ball21 + ball22 === 10 && ball21 !== 10) {
         setBall31(number);
         setScore3(number);
         setScore2(number + score2);
@@ -88,7 +88,7 @@ const Board = (props) => {
         setScore4(number);
         setScore2(number + score2);
         setScore3(number + score3);
-       } else if (ball31 === 10) {
+       } else if (ball31 === 10 || ball31 + ball32 === 10 && ball31 !== 10) {
         setBall41(number);
         setScore4(number);
         setScore3(number + score3);
@@ -104,7 +104,7 @@ const Board = (props) => {
         setScore5(number);
         setScore3(number + score3);
         setScore4(number + score4);
-       } else if (ball41 === 10) {
+       } else if (ball41 === 10 || ball41 + ball42 === 10 && ball41 !== 10) {
         setBall51(number);
         setScore5(number);
         setScore4(number + score4);
@@ -120,7 +120,7 @@ const Board = (props) => {
         setScore6(number);
         setScore4(number + score4);
         setScore5(number + score5);
-       } else if (ball51 === 10) {
+       } else if (ball51 === 10 || ball51 + ball52 === 10 && ball51 !== 10) {
         setBall61(number);
         setScore6(number);
         setScore5(number + score5);
@@ -136,7 +136,7 @@ const Board = (props) => {
          setScore7(number);
          setScore5(number + score5);
          setScore6(number + score6);
-       } else if (ball61 === 10) {
+       } else if (ball61 === 10 || ball61 + ball62 === 10 && ball61 !== 10) {
         setBall71(number);
         setScore7(number);
         setScore6(number + score6);
@@ -151,7 +151,7 @@ const Board = (props) => {
         setScore8(number);
         setScore6(number + score6);
         setScore7(number + score7);
-       } else if (ball71 === 10) {
+       } else if (ball71 === 10 || ball71 + ball72 === 10 && ball71 !== 10) {
         setBall81(number);
         setScore8(number);
         setScore7(number + score7);
@@ -167,7 +167,7 @@ const Board = (props) => {
         setScore9(number);
         setScore7(number + score7);
         setScore8(number + score8);
-       } else if (ball81 === 10) {
+       } else if (ball81 === 10 || ball81 + ball82 === 10 && ball81 !== 10) {
         setBall91(number);
         setScore9(number);
         setScore8(number + score8);
@@ -183,7 +183,7 @@ const Board = (props) => {
          setScore10(number);
          setScore8(number + score8);
          setScore9(number + score9);
-     } else if (ball91 === 10) {
+     } else if (ball91 === 10 || ball91 + ball92 === 10 && ball91 !== 10) {
       setBall101(number);
       setScore10(number);
       setScore9(number + score9);
@@ -195,10 +195,10 @@ const Board = (props) => {
    }
    if (ball === 2) {
     setSecThrow(number);
-    if (frame === 10 && ball101 === 10) {
+    if (frame === 10) {
       setBall(3);
-    } else {
-      setBall(1);
+     } else {
+       setBall(1);
      }
     if (frame === 1) {
       setBall12(number);
@@ -323,6 +323,7 @@ const Board = (props) => {
 
  const newGame = () => {
   setFrame(1);
+  setBall(1);
   setFirstThrow(0);
   setSecThrow(0);
   setThirdThrow(0);
