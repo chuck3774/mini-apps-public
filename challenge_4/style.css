@@ -4,4 +4,13 @@
   border-style: solid;
   border-width: 2px;
   text-align: center;
+
+}
+
+.hidden {
+  display: none;
+}
+
+.clicked {
+  background-color: lightgray;
 }
