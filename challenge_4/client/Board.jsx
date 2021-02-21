@@ -7,7 +7,6 @@ const [board, setBoard] = useState([]);
 const [start, setStart] = useState(false);
 const [lose, setLose] = useState(false);
 const [win, setWin] = useState(false);
-const [count, setCount] = useState(0);
 const newBoard = (e) => {
 if (e.target.textContent === "Restart") {
   location.reload();
@@ -207,54 +206,86 @@ const changeSquare = (e) => {
   let childText = e.target.children[1].textContent;
   let child = e.target.children[1];
   let element = e.target;
-  element.className += " clicked";
-  child.classList.remove("hidden");
-  setCount(count + 1);
-  if (count === 90) {
-    setWin(true);
-  }
+
   if(childText === '0') {
+    e.target.children[1].textContent = '';
     if (num === 0) {
-      document.getElementById(`${num + 1}`).click();
-      document.getElementById(`${num + 10}`).click();
-      document.getElementById(`${num + 11}`).click();
+      if (element.classList.contains('clicked')) {
+        return;
+      } else {
+        document.getElementById(`${num + 1}`).click();
+        document.getElementById(`${num + 10}`).click();
+        document.getElementById(`${num + 11}`).click();
+
+      }
     } else if (num === 9) {
+      if (element.classList.contains('clicked')) {
+        return;
+      } else {
       document.getElementById(`${num - 1}`).click();
       document.getElementById(`${num + 10}`).click();
       document.getElementById(`${num + 9}`).click();
+      }
     } else if (num === 90) {
+      if (element.classList.contains('clicked')) {
+        return;
+      } else {
       document.getElementById(`${num - 10}`).click();
       document.getElementById(`${num + 1}`).click();
       document.getElementById(`${num - 9}`).click();
+      }
     } else if (num === 99) {
+      if (element.classList.contains('clicked')) {
+        return;
+      } else {
       document.getElementById(`${num - 1}`).click();
       document.getElementById(`${num - 10}`).click();
       document.getElementById(`${num - 11}`).click();
+      }
     } else if (num === 1 || num === 2 || num === 3 || num === 4 || num === 5 || num === 6 || num === 7 || num === 8) {
+      if (element.classList.contains('clicked')) {
+        return;
+      } else {
       document.getElementById(`${num - 1}`).click();
       document.getElementById(`${num + 1}`).click();
       document.getElementById(`${num + 9}`).click();
       document.getElementById(`${num + 10}`).click();
       document.getElementById(`${num + 11}`).click();
+      }
     } else if (num === 19 || num === 29 || num === 39 || num === 49 || num === 59 || num === 69 || num === 79 || num === 89) {
+      if (element.classList.contains('clicked')) {
+        return;
+      } else {
       document.getElementById(`${num - 1}`).click();
       document.getElementById(`${num + 10}`).click();
       document.getElementById(`${num + 9}`).click();
       document.getElementById(`${num - 10}`).click();
       document.getElementById(`${num - 11}`).click();
+      }
     } else if (num === 91 || num === 92 || num === 93 || num === 94 || num === 95 || num === 96 || num === 97 || num === 98) {
+      if (element.classList.contains('clicked')) {
+        return;
+      } else {
       document.getElementById(`${num - 1}`).click();
       document.getElementById(`${num + 1}`).click();
       document.getElementById(`${num - 9}`).click();
       document.getElementById(`${num - 10}`).click();
       document.getElementById(`${num - 11}`).click();
+      }
     } else if (num === 10 || num === 20 || num === 30 || num === 40 || num === 50 || num === 60 || num === 70 || num === 80) {
+      if (element.classList.contains('clicked')) {
+        return;
+      } else {
       document.getElementById(`${num + 1}`).click();
       document.getElementById(`${num + 10}`).click();
       document.getElementById(`${num - 9}`).click();
       document.getElementById(`${num - 10}`).click();
       document.getElementById(`${num + 11}`).click();
+      }
     } else {
+      if (element.classList.contains('clicked')) {
+        return;
+      } else {
       document.getElementById(`${num + 1}`).click();
       document.getElementById(`${num - 1}`).click();
       document.getElementById(`${num - 9}`).click();
@@ -263,9 +294,17 @@ const changeSquare = (e) => {
       document.getElementById(`${num + 9}`).click();
       document.getElementById(`${num + 10}`).click();
       document.getElementById(`${num + 11}`).click();
+      }
     }
 
   }
+  element.className += " clicked";
+  child.classList.remove("hidden");
+  let clickedSquares = document.getElementsByClassName("clicked");
+  console.log(clickedSquares.length);
+   if (clickedSquares.length === 90) {
+     setWin(true);
+   }
   }
 
 }
