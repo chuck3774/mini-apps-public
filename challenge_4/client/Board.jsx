@@ -206,6 +206,21 @@ const changeSquare = (e) => {
   let childText = e.target.children[1].textContent;
   let child = e.target.children[1];
   let element = e.target;
+  if (childText === "1") {
+    child.className += " one";
+  }
+  if (childText === "2") {
+    child.className += " two";
+  }
+  if (childText === "3") {
+    child.className += " three";
+  }
+  if (childText === "4") {
+    child.className += " four";
+  }
+  if (childText === "5") {
+    child.className += " five";
+  }
 
   if(childText === '0') {
     e.target.children[1].textContent = '';
@@ -544,8 +559,8 @@ const changeSquare = (e) => {
         <div>
           <Row>
       <Button style={{marginTop: '20px', marginRight: '30px', marginLeft: '20px'}}onClick={(e) => {newBoard(e); setStart(true); if (e.target.textContent === "New Board") {e.target.textContent = "Restart";}}}>New Board</Button>
-        {lose ? <div>Game Over!</div> : ''}
-        {win ? <div>You Won!</div>: ''}
+        {lose ? <div className="three">Game Over!</div> : ''}
+        {win ? <div>You Won! 🎉</div>: ''}
           </Row>
 
         </div>

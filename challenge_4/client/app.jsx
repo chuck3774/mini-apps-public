@@ -19,7 +19,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="main">
-     MineSweeper
+     <h1>
+       MineSweeper
+      </h1>
      <Board />
       </div>
     );

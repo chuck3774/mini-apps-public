@@ -1,3 +1,10 @@
+h1 {
+  margin-bottom: 20px;
+  margin-left: 60px;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
 .square {
   width: 30px;
   height: 30px;
@@ -13,4 +20,24 @@
 
 .clicked {
   background-color: lightgray;
+}
+
+.one {
+  color: royalblue;
+}
+
+.two {
+  color: olivedrab;
+}
+
+.three {
+  color: red;
+}
+
+.four {
+  color: purple;
+}
+
+.five {
+  color: maroon;
 }
